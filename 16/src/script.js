@@ -218,13 +218,27 @@ for (let i = 0; i < 30; i++) {
  * Lights
  */
 // Ambient light
-const ambientLight = new THREE.AmbientLight("#ffffff", 0.5);
+const ambientLight = new THREE.AmbientLight("#86cdff", 0.275);
 scene.add(ambientLight);
 
 // Directional light
-const directionalLight = new THREE.DirectionalLight("#ffffff", 1.5);
+const directionalLight = new THREE.DirectionalLight("#86cdff", 1.2);
 directionalLight.position.set(3, 2, -8);
 scene.add(directionalLight);
+
+// Door light
+const doorLight = new THREE.PointLight("#ff7d00", 5);
+doorLight.position.set(0, 2.5, 2 + 0.01);
+// doorLight.castShadow = true;
+// doorLight.shadow.mapSize.width = 256;
+// doorLight.shadow.mapSize.height = 256;
+// doorLight.shadow.camera.far = 7;
+// doorLight.shadow.camera.near = 0.1;
+// doorLight.shadow.camera.left = -3.5;
+// doorLight.shadow.camera.right = 3.5;
+// doorLight.shadow.camera.top = 3.5;
+// doorLight.shadow.camera.bottom = -3.5;
+house.add(doorLight);
 
 /**
  * Sizes
