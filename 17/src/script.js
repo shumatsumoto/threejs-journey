@@ -125,10 +125,15 @@ const tick = () => {
   // update particles
   for (let i = 0; i < count; i++) {
     const i3 = i * 3;
-    particlesGeometry.attributes.position.array[i3 + 1] =
-      Math.sin(elapsedTime + i * 0.1) * 2;
+
+    const x = particlesGeometry.attributes.position.array[i3];
+    particlesGeometry.attributes.position.array[i3 + 1] = Math.sin(
+      elapsedTime + x
+    );
   }
   //   particles.rotation.y = -elapsedTime * 0.05;
+
+  particlesGeometry.attributes.position.needsUpdate = true;
 
   // Update controls
   controls.update();
